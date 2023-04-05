@@ -1,20 +1,14 @@
-import './App.css';
+import { Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <div class="container mx-auto mt-5"> 
-        <button class="
-        bg-blue-500 
-        hover:bg-green-700 
-        text-white 
-        font-bold 
-        py-4 px-8  
-        rounded"     
-        >
-        Mi boton
-        </button>
-      </div>
+
+
+function Home() { 
+    return <div>
+    <div class="container mx-auto mt-5"> 
+        <Link to="/">
+          <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
+        </Link>
+    </div>
 
 <div class="mt-5">
     <h1 class=" mt-5  text-green-500 text-xl text-center">Esto es un H1</h1>
@@ -41,13 +35,9 @@ function App() {
     <div class="bg-green-600">C</div>
     <div class="bg-green-900">D</div>
 </div>
-
-
-
-
-
-    </div>
-  );
+ </div>;
 }
 
-export default App;
+export default Home;
+
+
