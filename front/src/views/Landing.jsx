@@ -8,7 +8,9 @@ function Landing() {
         <Link to="/home">
           <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO HOME</button>
         </Link>
-
+        <Link to="/old">
+          <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO OLD</button>
+        </Link>
     </div>
 
 
