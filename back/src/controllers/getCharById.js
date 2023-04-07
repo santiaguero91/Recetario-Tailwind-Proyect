@@ -2,11 +2,10 @@
 
 const getCharById = (req, res) => {
         const {id} = req.params
-        console.log("holis");
         axios.get(`https://rickandmortyapi.com/api/character/${id}`) 
         .then(response => {
-        const { id, name, species, image, gender} = response.data
-        res.status(200).json({id, name, gender, image,species, gender})
+        const { name, species, image, gender} = response.data
+        res.status(200).json({name, gender, image,species, gender})
         })
         .catch(
         (error) => {
