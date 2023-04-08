@@ -10,6 +10,7 @@ while(i <= 5) {
         id: getchar.data.id, 
         name: getchar.data.name, 
         gender: getchar.data.gender, 
+        image: getchar.data.image,
 }
 chars.push(character)
 i++

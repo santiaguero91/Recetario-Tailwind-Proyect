@@ -27,12 +27,14 @@ useEffect(() => {
    }, []);
 
      return <div>
-    <div class="container mx-auto mt-5"> 
+    <div > 
         <Link to="/">
           <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
         </Link>
         
-        <div>
+        <div class="bg-slate-50
+        grid grid-cols-3 gap-4 my-2" 
+        >
         <ul>
         {
         characters.map(({id, name, species, gender, image}) => (
