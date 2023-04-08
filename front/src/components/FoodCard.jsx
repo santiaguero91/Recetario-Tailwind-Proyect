@@ -3,7 +3,9 @@
 export default function FoodCard({ id , name,  species, gender, image,onClose})  {
     return ( 
 
-        <div class="
+        <div class=" 
+        mx-auto
+        mt-1
         block max-w-sm p-6 
         bg-white border 
         border-gray-200 
@@ -35,8 +37,7 @@ export default function FoodCard({ id , name,  species, gender, image,onClose}) 
         <img class="
         w-24 h-24 
         md:w-48 md:h-auto 
-        md:rounded-none 
-        rounded-full 
+        rounded-2xl
         mx-auto" 
         src={image} alt={name} />       
         </div>

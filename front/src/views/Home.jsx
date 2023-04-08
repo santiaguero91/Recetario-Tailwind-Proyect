@@ -32,10 +32,10 @@ useEffect(() => {
           <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
         </Link>
         
-        <div class="bg-slate-50
-        grid grid-cols-3 gap-4 my-2" 
-        >
-        <ul>
+<div>
+<ul class="
+mt-10
+">
         {
         characters.map(({id, name, species, gender, image}) => (
         <FoodCard 
@@ -52,6 +52,15 @@ useEffect(() => {
         }
 
       </ul>
+</div>
+
+
+
+
+        <div class="bg-slate-50
+        grid grid-cols-3 gap-4 my-2" 
+        >
+        
    </div>
 
 
