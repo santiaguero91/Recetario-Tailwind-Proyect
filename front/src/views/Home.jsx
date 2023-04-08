@@ -1,24 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import FoodCard from "../components/FoodCard"
+import axios from "axios";
 
 
 function Home() { 
 
   const [characters, setCharacters] = useState([]);
 
-  const onSearch = () => {
-    fetch(`http://localhost:3001/rickandmorty/character/2`)
-       .then((response) => response.json())
-       .then((data) => {
-        console.log(data);
-          if (data) {
-             setCharacters((Chars) =>(data));
-             console.log(data);
-          } else {
-             window.alert('No hay personajes con ese ID');
-          }
-       })
+  const onSearch = async () => {
+
+      const result = await axios("http://localhost:3001/getChars")
+      console.log("data", result);
+      setCharacters(result.data)
+    
     }
 
     const onClose = (id) =>{
