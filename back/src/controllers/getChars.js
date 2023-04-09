@@ -12,10 +12,10 @@ while(i <= 5) {
         gender: getchar.data.gender, 
         image: getchar.data.image,
 }
-chars.push(character)
+chars.push(character);
 i++
 }
 console.log(chars);
-res.status(200).json(chars)
+res.status(200).json(chars);
 } 
 module.exports= getChars
