@@ -2,19 +2,16 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import FoodCard from "../components/FoodCard"
 import axios from "axios";
+import SearchBar from "../components/SearchBar"
+import {getRecipes , filterRecipesBySeason} from "../redux/actions"
+import { useDispatch, useSelector} from "react-redux";
 
 
 function Home() { 
+  const dispatch = useDispatch();
+  const allRecipes = useSelector((state) => state.recipes)
 
   const [characters, setCharacters] = useState([]);
-
-  const onSearch = async () => {
-
-      const result = await axios("http://localhost:3001/recipes")
-      console.log("data", result);
-      setCharacters(result.data)
-
-    }
 
     const onClose = (id) =>{
       setCharacters(
@@ -22,19 +19,34 @@ function Home() {
       )
      }
 
+     function handleFilterSeason(event){
+      dispatch(filterRecipesBySeason(event.target.value))
+     }
+
 useEffect(() => {
-  onSearch()
-   }, []);
+  dispatch(getRecipes())
+   }, [dispatch]);
 
      return (
 <div > 
+<SearchBar/>
   <Link to="/">
-    <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
+    <button className=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
   </Link> 
+
+<div>
+<select onChange={e=> handleFilterSeason(e)}>
+        <option value="All">All Seasons</option>
+        <option value="Summer">Summer</option>
+        <option value="Autumn">Autumn</option>
+        <option value="Winter">Winter</option>
+        <option value="Spring">Spring</option>
+</select>
+</div>
   <div>
-    <ul class="mt-10">
+    <ul className="mt-10">
         {
-        characters.map(({id, name, duration, season, img}) => (
+        allRecipes.map(({id, name, duration, season, img}) => (
         <FoodCard 
         key ={id}
         name={name}
@@ -46,8 +58,7 @@ useEffect(() => {
         </ul>
   </div>
 </div>
- 
- )
+)
 }
 
 export default Home;
