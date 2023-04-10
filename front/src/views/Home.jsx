@@ -29,12 +29,14 @@ useEffect(() => {
      return (
 <div > 
 <SearchBar/>
-  <Link to="/">
+{/*   <Link to="/">
     <button className=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
-  </Link> 
+  </Link>  */}
 
 <div>
-<select onChange={e=> handleFilterSeason(e)}>
+<select 
+className="mt-5"
+onChange={e=> handleFilterSeason(e)}>
         <option value="All">All Seasons</option>
         <option value="Summer">Summer</option>
         <option value="Autumn">Autumn</option>
