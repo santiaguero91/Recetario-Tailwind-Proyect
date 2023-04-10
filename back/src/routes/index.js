@@ -5,14 +5,14 @@ const bodyparser = require('body-parser');
 const getCharById = require("../controllers/getCharById")
 const getCharDetail = require("../controllers/getCharDetail")
 const getChars = require("../controllers/getChars")
-const createRecipe = require("./createRecipe")
+const recipes = require("./recipes")
 
 router.use(bodyparser.json());
 
 router.use("/onsearch/:id", getCharById)
 router.use("/detail/:id", getCharDetail)
 router.use("/getChars", getChars)
-router.use("/create", createRecipe)
+router.use("/recipes", recipes)
 
 
 module.exports = router

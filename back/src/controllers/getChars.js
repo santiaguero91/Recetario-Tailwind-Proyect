@@ -5,7 +5,6 @@ const chars = []
 const getChars = async(req, res) => {
 while(i <= 5) {
     let getchar = await axios.get(`https://rickandmortyapi.com/api/character/${i}`)
-    
     let character =  {
         id: getchar.data.id, 
         name: getchar.data.name, 

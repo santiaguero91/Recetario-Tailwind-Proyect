@@ -10,10 +10,10 @@ function Home() {
 
   const onSearch = async () => {
 
-      const result = await axios("http://localhost:3001/getChars")
+      const result = await axios("http://localhost:3001/recipes")
       console.log("data", result);
       setCharacters(result.data)
-    
+
     }
 
     const onClose = (id) =>{
@@ -26,47 +26,28 @@ useEffect(() => {
   onSearch()
    }, []);
 
-     return <div>
-    <div > 
-        <Link to="/">
-          <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
-        </Link>
-        
-<div>
-<ul class="
-mt-10
-">
+     return (
+<div > 
+  <Link to="/">
+    <button class=" bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-8  rounded" >TO LANDING</button>
+  </Link> 
+  <div>
+    <ul class="mt-10">
         {
-        characters.map(({id, name, species, gender, image}) => (
+        characters.map(({id, name, duration, season, img}) => (
         <FoodCard 
         key ={id}
-        id={id}
         name={name}
-        species={species}
-        gender={gender}
-        image={image}
+        duration={duration}
+        season={season}
+        img={img}
         onClose={() => onClose(id)}     
-        /> 
-
-        ))
-        }
-
-      </ul>
+        /> ))}
+        </ul>
+  </div>
 </div>
-
-
-
-
-        <div class="bg-slate-50
-        grid grid-cols-3 gap-4 my-2" 
-        >
-        
-   </div>
-
-
-    </div>
-
- </div>;
+ 
+ )
 }
 
 export default Home;
