@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import {useDispatch} from "react-redux"
+import {searchRecipeName} from "../redux/actions"
+
 
 export default function SearchBar(){
 
@@ -13,6 +15,9 @@ export default function SearchBar(){
     }
     
     function handleSubmit(event) {
+    event.preventDefault()
+    dispatch(searchRecipeName(name))
+
     }
     return (
         <div className="grid-col-2">

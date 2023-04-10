@@ -1,4 +1,5 @@
 export const GET_RECIPES = "GET_RECIPES"
 export const FILTER_BY_SEASON= "FILTER_BY_SEASON"
+export const GET_RECIPE_NAME = "GET_RECIPE_NAME"
 
 

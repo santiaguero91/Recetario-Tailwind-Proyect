@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import FoodCard from "../components/FoodCard"
-import axios from "axios";
 import SearchBar from "../components/SearchBar"
 import {getRecipes , filterRecipesBySeason} from "../redux/actions"
 import { useDispatch, useSelector} from "react-redux";

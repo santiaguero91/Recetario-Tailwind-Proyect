@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_RECIPES, FILTER_BY_SEASON} from "./action-types";
+import { GET_RECIPES, FILTER_BY_SEASON, GET_RECIPE_NAME} from "./action-types";
 
 export function getRecipes(){
     return async function(dispatch) {
@@ -21,3 +21,17 @@ export function filterRecipesBySeason(payload){
         payload
     }
 } 
+
+export function searchRecipeName(name){
+    return async function(dispatch) {
+        try{
+        var json = await axios.get("http://localhost:3001/recipes?name="+ name)
+        return dispatch({
+            type: GET_RECIPE_NAME,
+            payload: json.data 
+        }) 
+    }catch (error){
+        console.log(error);
+    }
+    }
+}

@@ -1,4 +1,4 @@
-import { GET_RECIPES, FILTER_BY_SEASON} from "./action-types";
+import { GET_RECIPES, FILTER_BY_SEASON, GET_RECIPE_NAME} from "./action-types";
 
 
 const initialState = {
@@ -23,6 +23,11 @@ const rootReducer =(state=initialState, action) => {
         ...state,
         recipes: recipeFiltered
         }
+    case GET_RECIPE_NAME:        
+    return{
+        ...state,
+        recipes: action.payload
+    }
     default:
         return{...state}; 
     }
