@@ -9,7 +9,6 @@ router.post("/", async (req,res) => {
         season,
         img
    } = req.body;
-
    let recipeCreated = await recipe.create({
     name,
     duration,

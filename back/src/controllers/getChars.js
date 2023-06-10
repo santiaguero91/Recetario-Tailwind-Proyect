@@ -2,6 +2,8 @@ const axios = require("axios")
 
 let i = 1
 const chars = []
+
+
 const getChars = async(req, res) => {
 while(i <= 5) {
     let getchar = await axios.get(`https://rickandmortyapi.com/api/character/${i}`)
